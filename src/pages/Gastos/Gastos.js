@@ -420,10 +420,9 @@ const Gastos = () => {
                 allowColumnReordering={true}
                 showBorders={true}
               >
-                <Paging pageSize={5} defaultPageSize={5} />
+                <Paging pageSize={10} />
                 <Pager
                   showPageSizeSelector={true}
-                  allowedPageSizes={allowedPageSizes}
                   showNavigationButtons={true}
                 />
                 <GroupPanel visible={true} />
@@ -673,7 +672,7 @@ const Gastos = () => {
                   showBorders={true}
                 >
                   <Editing
-                    mode="row"
+                    mode="cell"
                     confirmDelete={false}
                     allowUpdating={true}
                     allowDeleting={true}

@@ -21,7 +21,7 @@ const Empleados = () => {
     const [listadoDepartamentos, setListadoDepartamentos] = useState([]);
     useEffect(() => {
         ObtenerListadoEmpleado();
-
+        // eslint-disable-next-line
     }, []);
     const allowedPageSizes = [5, 10, 20, 50, 100];
     const ObtenerListadoEmpleado = async () => {
