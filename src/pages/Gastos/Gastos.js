@@ -16,7 +16,7 @@ import DataGrid, {
   Summary,
   TotalItem
 } from "devextreme-react/data-grid";
-import { Link ,BrowserRouter} from 'react-router-dom';
+import { Link, BrowserRouter } from 'react-router-dom';
 import { Modal, Button } from 'react-bootstrap';
 
 const Gastos = () => {
@@ -54,7 +54,7 @@ const Gastos = () => {
     ObtenerListadoEmpleadoAprueba();
   }, []);
   const allowedPageSizes = [5, 10, 20, 50, 100];
-  
+
   function cellRender(e) {
     return (
       <div>
@@ -63,9 +63,9 @@ const Gastos = () => {
           Editar
         </Button>| */}
         <BrowserRouter>
-         <Link to={"/ReporteGasto/"+e.data.id_Gasto} target='_blank' className="btn btn-success"
-         onClick={()=>{localStorage.setItem("id_Gasto", e.data.id_Gasto);localStorage.setItem("id_Empleado_Gasto", e.data.id_Empleado_Gasto)}}
-         >Emprimir</Link>
+          <Link to={"/ReporteGasto/" + e.data.id_Gasto} target='_blank' className="btn btn-success"
+            onClick={() => { localStorage.setItem("id_Gasto", e.data.id_Gasto); localStorage.setItem("id_Empleado_Gasto", e.data.id_Empleado_Gasto) }}
+          >Emprimir</Link>
         </BrowserRouter>|
         <Button variant="danger" size="sm" onClick={() => MostrarAlertaEliminarGasto(e.data.id_Gasto)}>
           Eliminar
@@ -350,6 +350,16 @@ const Gastos = () => {
   }
   function guardarGasto() {
 
+    if (gasto.idConcepto === null)
+      return toast.error("Seleccione el Concepto!!");
+    if (gasto.idempleadoG === null)
+      return toast.error("Seleccione el Empleado!!");
+    if (gasto.idempleadoSupervisa == null)
+      return toast.error("Seleccione el Supervisor!!");
+    if (gasto.idempleadoAprueba === null)
+      return toast.error("Seleccione el Empelado que Aprueba!!");
+    if (listadoGastoDetalle.length === 0)
+      return toast.error("Agregue al menos 1 Detalle");
     let guardargasto = {
       IdEmpleado: gasto.idempleadoG,
       IdConcepto: gasto.idConcepto,
@@ -387,6 +397,7 @@ const Gastos = () => {
         }
       });
   }
+
   return (
     <Fragment>
       <div className="panel">
