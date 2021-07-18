@@ -490,7 +490,7 @@ const Gastos = () => {
                   dataField="identificador"
                   caption="Acceso"
                   alignment="center"
-                  minWidth="250"
+                  minWidth="200"
                   cellRender={cellRender}
                 />
               </DataGrid>

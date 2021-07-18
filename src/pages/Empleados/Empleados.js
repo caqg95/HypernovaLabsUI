@@ -21,8 +21,6 @@ const Empleados = () => {
     const [listadoDepartamentos, setListadoDepartamentos] = useState([]);
     useEffect(() => {
         ObtenerListadoEmpleado();
-        ObtenerListadoPuesto();
-        ObtenerListadoDepartamentos();
 
     }, []);
     const allowedPageSizes = [5, 10, 20, 50, 100];
@@ -37,6 +35,8 @@ const Empleados = () => {
                     toast.dismiss();
                     console.log(result.data)
                     setListadoEmpleado(result.data);
+                    ObtenerListadoPuesto();
+                    ObtenerListadoDepartamentos();
                 } else if (result.status === 400) {
                     toast.error(result.message);
                 } else toast.error(result.message);
@@ -119,12 +119,11 @@ const Empleados = () => {
                 }
             });
     };
-
     function guardarEmpleado(e) {
         let empleado = {
             nombre: e.data.nombre,
-            apellido:e.data.apellido,
-            IdPuesto:e.data.id_Puesto,
+            apellido: e.data.apellido,
+            IdPuesto: e.data.id_Puesto,
             UsuarioRegistro: localStorage.getItem("username")
         };
         axios
@@ -158,8 +157,8 @@ const Empleados = () => {
         let empleado = {
             IdEmpleado: e.data.id_Empleado,
             nombre: e.data.nombre,
-            apellido:e.data.apellido,
-            IdPuesto:e.data.id_Puesto,
+            apellido: e.data.apellido,
+            IdPuesto: e.data.id_Puesto,
             UsuarioRegistro: e.data.UsuarioRegistro,
             fechaRegistro: e.data.fechaRegistro,
             UsuarioActualizo: localStorage.getItem("username")
