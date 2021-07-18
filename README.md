@@ -1,6 +1,13 @@
 # FrontEnd de Hypernova Labs De Gestion de Gastos
 
 
+## Accesso
+
+El acceso a la aplicacion es el siguiente
+
+*Usuario: CQUINTERO
+
+*Contraseña: TestPass1.
 
 ## Instalacion
 
