@@ -1,8 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
+import axios from "axios";
 import reportWebVitals from './reportWebVitals';
+
+
+//Definimos los valores de conexion para axios
+process.env.REACT_APP_ENVIRONMENT === "prod"
+  ? (axios.defaults.baseURL = "https://localhost:44316/api/")
+  : (axios.defaults.baseURL = "https://localhost:44316/api/");
+
 
 ReactDOM.render(
   <React.StrictMode>
