@@ -3,11 +3,11 @@
 
 ## Accesso
 
-El acceso a la aplicacion es el siguiente
+El acceso a la aplicacion es el siguiente:
 
-*Usuario: CQUINTERO
+* Usuario: CQUINTERO
 
-*Contraseña: TestPass1.
+* Contraseña: TestPass1.
 
 ## Instalacion
 
@@ -20,6 +20,8 @@ Para correr el codigo debemos de ejecutar los siguiente comandos:
 
 ## Contacto
 
+```
 Realizado por: Carlos Alberto Quintero Grande
 
 Correo: cquintergrande@yahoo.es
+```
